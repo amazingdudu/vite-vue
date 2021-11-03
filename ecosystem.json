@@ -1,0 +1,28 @@
+{
+    "apps": [
+        {
+            "name": "apple",
+            "script": "server/server.prod.js",
+            "env": {
+                "COMMON_VARIABLE": "true"
+            },
+            "env_production": {
+                "NODE_ENV": "production"
+            }
+        }
+    ],
+    "deploy": {
+        "production": {
+            "user": "root",
+            "host": ["39.106.8.52"],
+            "ref": "origin/master",
+            "repo": "https://github.com/amazingdudu/vite-vue.git",
+            "ssh_options": "StrictHostKeyChecking=no",
+            "path": "/home",
+            "post-deploy": "git pull && npm install && npm run build",
+            "env": {
+                "NODE_ENV": "production"
+            }
+        }
+    }
+}
