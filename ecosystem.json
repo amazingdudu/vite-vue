@@ -19,10 +19,7 @@
             "repo": "https://github.com/amazingdudu/vite-vue.git",
             "ssh_options": "StrictHostKeyChecking=no",
             "path": "/home",
-            "post-deploy": "git pull && npm install && npm run build",
-            "env": {
-                "NODE_ENV": "production"
-            }
+            "post-deploy": "git pull && npm install && npm run build"
         }
     }
 }
